@@ -1,28 +1,28 @@
 name: Build InfiniR_kernel_alioth Kernel
 
 on:
-    workflow_dispatch:
-      inputs:
-        kernel_tag:
-          description: '内核代码分支/Tag'
-          required: false
-          type: string
-          default: '-b 13.0-alioth'
-        config_name:
-          description: '内核编译配置文件名'
-          required: false
-          type: string
-          default: 'alioth_hylab_defconfig'
-        git_url:
-          description: '内核仓库地址'
-          required: false
-          type: string
-          default: 'https://github.com/raystef66/InfiniR_kernel_alioth.git'
-        boot_zip:
-          description: 'boot压缩包'
-          required: false
-          type: string
-          default: 'miui14.0.7_boot.zip'
+  workflow_dispatch:
+    inputs:
+      kernel_tag:
+        description: '内核代码分支/Tag'
+        required: false
+        type: string
+        default: '-b 13.0-alioth'
+      config_name:
+        description: '内核编译配置文件名'
+        required: false
+        type: string
+        default: 'alioth_hylab_defconfig'
+      git_url:
+        description: '内核仓库地址'
+        required: false
+        type: string
+        default: 'https://github.com/raystef66/InfiniR_kernel_alioth.git'
+      boot_zip:
+        description: 'boot压缩包'
+        required: false
+        type: string
+        default: 'miui14.0.7_boot.zip'
 
 jobs:
 
