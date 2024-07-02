@@ -62,7 +62,7 @@ jobs:
       - name: Clone Kernel
         run: |
           git clone --depth=1 ${{ inputs.kernel_tag }} ${{ inputs.git_url }} kernel-source
-          git clone https://github.com/tiann/KernelSU kernel-source/KernelSU
+          git clone https://github.com/tiann/KernelSU kernel-source/KernelSU -b v0.9.5
           cd kernel-source 
           ./KernelSU/kernel/setup.sh main
 
