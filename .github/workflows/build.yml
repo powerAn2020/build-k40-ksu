@@ -40,6 +40,13 @@ jobs:
           ref: master
           fetch-depth: 0
 
+      - name: Input's var
+        run: |
+          echo ${{ inputs.kernel_tag }}
+          echo ${{ inputs.config_name }}
+          echo ${{ inputs.git_url }}
+          echo ${{ inputs.clang_url }}
+          
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
