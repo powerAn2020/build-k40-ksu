@@ -101,5 +101,5 @@ jobs:
       - name: Kernel REL
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ inputs.config_name }} KernelSU
+          name: KernelSU
           path: ./Kernel.zip
