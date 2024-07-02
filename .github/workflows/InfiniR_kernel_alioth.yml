@@ -25,21 +25,15 @@ on:
         default: 'miui14.0.7_boot.zip'
 
 jobs:
-
   build_kernel:
-
     name: Build K40 Kernel
-
     runs-on: ubuntu-22.04
-
     steps:
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: master
           fetch-depth: 0
-
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -52,18 +46,15 @@ jobs:
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
           sudo timedatectl set-timezone Asia/Shanghai
-      
       - name: Clone Kernel
         run: |
           git clone --depth=1 ${{ inputs.kernel_tag }} ${{ inputs.git_url }} kernel-source
           git clone https://github.com/tiann/KernelSU kernel-source/KernelSU 
           cd kernel-source 
           ./KernelSU/kernel/setup.sh v0.9.5
-
       - name: Make
         run: |
           bash build_alioth.sh zip
-
       - name: Patch Boot
         run: |
           chmod +x ./magiskboot
@@ -88,7 +79,7 @@ jobs:
           path: ./kernel.zip
 
       - name: Kernel REL 2
-      uses: actions/upload-artifact@v3
-      with:
-        name: InfiniR_kernel_alioth KernelSU
-        path: ./out/*.zip
+        uses: actions/upload-artifact@v3
+        with:
+          name: InfiniR_kernel_alioth KernelSU
+          path: ./out/*.zip
