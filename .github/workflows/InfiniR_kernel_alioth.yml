@@ -55,6 +55,7 @@ jobs:
       - name: Make
         run: |
           cd kernel-source
+          bash build_alioth.sh build
           bash build_alioth.sh zip
       - name: Patch Boot
         run: |
