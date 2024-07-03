@@ -54,6 +54,7 @@ jobs:
           ./KernelSU/kernel/setup.sh v0.9.5
       - name: Make
         run: |
+          cd kernel-source
           bash build_alioth.sh zip
       - name: Patch Boot
         run: |
